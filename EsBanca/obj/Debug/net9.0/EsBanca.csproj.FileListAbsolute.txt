@@ -1,0 +1,14 @@
+/Users/sor-team/Documents/source/EsBanca/EsBanca/bin/Debug/net9.0/EsBanca
+/Users/sor-team/Documents/source/EsBanca/EsBanca/bin/Debug/net9.0/EsBanca.deps.json
+/Users/sor-team/Documents/source/EsBanca/EsBanca/bin/Debug/net9.0/EsBanca.runtimeconfig.json
+/Users/sor-team/Documents/source/EsBanca/EsBanca/bin/Debug/net9.0/EsBanca.dll
+/Users/sor-team/Documents/source/EsBanca/EsBanca/bin/Debug/net9.0/EsBanca.pdb
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.AssemblyInfoInputs.cache
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.AssemblyInfo.cs
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.csproj.CoreCompileInputs.cache
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.dll
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/refint/EsBanca.dll
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.pdb
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.genruntimeconfig.cache
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/ref/EsBanca.dll
