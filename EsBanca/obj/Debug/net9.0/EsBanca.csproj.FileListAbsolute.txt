@@ -12,3 +12,4 @@
 /Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.pdb
 /Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.genruntimeconfig.cache
 /Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/ref/EsBanca.dll
+/Users/sor-team/Documents/source/EsBanca/EsBanca/obj/Debug/net9.0/EsBanca.sourcelink.json

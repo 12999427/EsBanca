@@ -77,6 +77,7 @@ namespace EsBanca
                 {
                     S_Cabina.Release();
                 }
+                Console.WriteLine("Riporto: " + N_Cabina);
                 N_Cabina = 0;
             S_Mutex_Var.Release();
         }

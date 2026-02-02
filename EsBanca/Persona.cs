@@ -61,8 +61,8 @@ namespace EsBanca
             }
 
             Console.WriteLine("Persona {0} con metallo={1} esce dalla cabina e dalla banca.", Id, HaMetallo);
-            Banca.S_Cabina.Release();
             await Banca.SbloccaIngressoStanzaSeAumentato();
+            Banca.S_Cabina.Release();
         }
     }
 }
