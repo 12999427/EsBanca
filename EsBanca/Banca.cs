@@ -65,21 +65,32 @@ namespace EsBanca
                     }
                     //PortaRivoltaEsterno = false;
                     S_Interno.Release(N_Cabina);
-                    Console.WriteLine("Banca: cabina piena o nessun'altro in attesa, sblocco ingresso stanza. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | {3}", N_Cabina, N_Interno, N_Attesa, S_Interno.CurrentCount);
+                    Console.WriteLine("Banca: cabina piena o nessun'altro in attesa, sblocco ingresso stanza. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | Interno cur: {3} | Cabina cur: {4}", N_Cabina, N_Interno, N_Attesa, S_Interno.CurrentCount, S_Cabina.CurrentCount);
                 }
             S_Mutex_Var.Release();
             Console.WriteLine("b");
         }
 
-        public async Task SbloccaIngressoStanzaSeAumentato()
+        public async Task SbloccaIngressoStanzaSeAumentato(bool esetiDaFerro)
         {
             await S_Mutex_Var.WaitAsync();
-                if (N_Interno != 0)
+                if (esetiDaFerro)
                 {
-                    S_Cabina.Release(PostiCabina);
-                    N_Interno = 0;
+                    if (N_Interno != 0)
+                    {
+                        S_Cabina.Release(PostiCabina);
+                        N_Interno = 0;
+                    }
                 }
-                Console.WriteLine("uscita dalla banca. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | {3}", N_Cabina, N_Interno, N_Attesa, S_Cabina.CurrentCount);
+                else
+                {
+                    if (N_Cabina != 0)
+                    {
+                        S_Cabina.Release(PostiCabina);
+                        N_Cabina = 0;
+                    }
+                }
+                Console.WriteLine("uscita dalla banca. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | Interno cur: {3} | Cabina cur: {4}", N_Cabina, N_Interno, N_Attesa, S_Interno.CurrentCount, S_Cabina.CurrentCount);
             S_Mutex_Var.Release();
         }
 

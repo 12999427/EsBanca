@@ -61,16 +61,16 @@ namespace EsBanca
                 await Banca.S_Mutex_Var.WaitAsync();
                     Banca.L_Interno.Remove(this);
                 Banca.S_Mutex_Var.Release();
-                //Console.WriteLine("asdasd");
-                await Banca.SbloccaIngressoStanzaSeAumentato();
-                //Console.WriteLine(Banca.S_Cabina.CurrentCount);
+                
+                await Banca.SbloccaIngressoStanzaSeAumentato(true);
+                
             }
             else
             {
                 await Banca.S_Mutex_Var.WaitAsync();
                     Banca.L_Cabina.Remove(this);
                 Banca.S_Mutex_Var.Release();
-                await Banca.SbloccaIngressoStanzaSeAumentato();
+                await Banca.SbloccaIngressoStanzaSeAumentato(false);
 
                 Console.WriteLine("Persona {0} con metallo={1} viene cacciata fuori!", Id, HaMetallo);
             }

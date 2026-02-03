@@ -25,6 +25,8 @@ namespace EsBanca
             }
 
             await Task.WhenAll(tasks);
+
+            Console.WriteLine("\nTerminato");
         }
     }
 }
