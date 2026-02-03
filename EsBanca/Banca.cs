@@ -51,34 +51,35 @@ namespace EsBanca
 
         public async Task ControllaSeSbloccareIngressoStanza()
         {
+            Console.WriteLine("a");
             await S_Mutex_Var.WaitAsync();
                 if (N_Cabina == PostiCabina || N_Attesa == 0)
                 {
                     if (N_Cabina < PostiCabina)
                     {
                         int diff = PostiCabina - N_Cabina;
-                        N_Cabina += diff;
                         for (int i = 0; i<diff; i++)
                         {
                             S_Cabina.Wait();
                         }
                     }
                     //PortaRivoltaEsterno = false;
-                    S_Interno.Release(PostiCabina);
-                    Console.WriteLine("Banca: cabina piena o nessun'altro in attesa, sblocco ingresso stanza.");
+                    S_Interno.Release(N_Cabina);
+                    Console.WriteLine("Banca: cabina piena o nessun'altro in attesa, sblocco ingresso stanza. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | {3}", N_Cabina, N_Interno, N_Attesa, S_Interno.CurrentCount);
                 }
             S_Mutex_Var.Release();
+            Console.WriteLine("b");
         }
 
         public async Task SbloccaIngressoStanzaSeAumentato()
         {
             await S_Mutex_Var.WaitAsync();
-                for (int i = 0; i<N_Cabina; i++)
+                if (N_Interno != 0)
                 {
-                    S_Cabina.Release();
+                    S_Cabina.Release(PostiCabina);
+                    N_Interno = 0;
                 }
-                Console.WriteLine("Riporto: " + N_Cabina);
-                N_Cabina = 0;
+                Console.WriteLine("uscita dalla banca. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | {3}", N_Cabina, N_Interno, N_Attesa, S_Cabina.CurrentCount);
             S_Mutex_Var.Release();
         }
 

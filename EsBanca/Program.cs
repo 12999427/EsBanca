@@ -8,7 +8,7 @@ namespace EsBanca
 {
     internal class Program
     {
-        static int numPersone = 20;
+        static int numPersone = 3;
         static async Task Main(string[] args)
         {
             Random random = new();
