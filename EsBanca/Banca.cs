@@ -58,16 +58,21 @@ namespace EsBanca
                     if (N_Cabina < PostiCabina)
                     {
                         int diff = PostiCabina - N_Cabina;
+                        S_Mutex_Var.Release();
                         for (int i = 0; i<diff; i++)
                         {
                             S_Cabina.Wait();
                         }
                     }
+                    else
+                        S_Mutex_Var.Release();
                     //PortaRivoltaEsterno = false;
                     S_Interno.Release(N_Cabina);
                     Console.WriteLine("Banca: cabina piena o nessun'altro in attesa, sblocco ingresso stanza. ora i contatori sono: in cabina={0}, in interno={1}, in attesa={2} | Interno cur: {3} | Cabina cur: {4}", N_Cabina, N_Interno, N_Attesa, S_Interno.CurrentCount, S_Cabina.CurrentCount);
                 }
-            S_Mutex_Var.Release();
+                else
+                    S_Mutex_Var.Release();
+
             Console.WriteLine("b");
         }
 

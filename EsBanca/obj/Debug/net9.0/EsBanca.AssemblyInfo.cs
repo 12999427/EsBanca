@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsBanca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab960e9b63ced96ec13d0d83b210735e498561ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed72af91fd3f827a8d28876dba4bd6eab9d3f9ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("EsBanca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsBanca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
